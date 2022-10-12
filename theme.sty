@@ -1,0 +1,192 @@
+\ProvidesPackage{beamertheme_berra}
+
+
+\RequirePackage{QFlogo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\selectcolormodel{rgb}
+\mode<presentation>
+ 
+% COLORI basati sul "Manuale di identita` visiva di Ateneo" ed. luglio 2009
+\definecolor{DEIred}{RGB}{155,0,20}
+\definecolor{UniPDgray}{RGB}{72,79,89}  
+\definecolor{UniPDlightgray}{RGB}{209,211,214}  
+% COLORI QuantumFuture
+\definecolor{QFblue}{RGB}{0,41,85}
+
+\definecolor{headBackg}{rgb}{1,1,1}  %  headline background
+\definecolor{headTitle}{HTML}{0e0F12}  %  title in headline
+\definecolor{headAuthor}{rgb}{0.9,0.9,0.9}  %  author in headline
+\definecolor{headInstitute}{rgb}{0.1,0.1,0.1}  %  institute in headline
+
+\definecolor{Backg}{rgb}{1,1,1}  %  e.g. for poster background
+\definecolor{blockBackg}{rgb}{0.6,0.6,0.6}  %  e.g. for block background
+\definecolor{sepTitle}{HTML}{000000}  %  e.g. title in headline, separation lines
+\definecolor{alertColor}{named}{DEIred}  %  e.g. for alert
+\definecolor{alertAuthor}{named}{QFblue}  %  e.g. for alert
+
+%\definecolor{DEIred}{rgb}{.6078,0.0549,0.1294}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% headline colors and fonts
+\setbeamercolor{headline}{fg=white,bg=headBackg}
+%\setbeamercolor{title in headline}{fg=white,bg=DEIred}
+\setbeamercolor{title in headline}{fg=DEIred,bg=white}
+\setbeamercolor{author in headline}{fg=black}
+\setbeamercolor{institute in headline}{fg=UniPDgray}
+\setbeamercolor{logo in headline}{fg=black,bg=Backg}
+
+
+% lines
+%\setbeamercolor{upper separation line head}{fg=ta2orange}
+\setbeamercolor{separation line}{bg=sepTitle}
+
+
+% footline colors and fonts
+\setbeamercolor{footline}{fg=red,bg=headBackg}
+%\setbeamerfont{footline}{fg=white,size=\normalsize}
+
+
+% poster background, body colors, and fonts
+\setbeamercolor*{normal text}{fg=black,bg=Backg}
+
+
+% block environment
+%\setbeamercolor*{block body}{bg=blockBackg,fg=black}
+\setbeamercolor*{block body}{bg=white,fg=black}
+\setbeamercolor*{block title}{fg=white,bg=DEIred}
+\setbeamerfont{block title}{size=\large,series=\bf}
+
+
+%\setbeamerfont{equation}{size=\large,series=\bf,bg=headBackg,fg=white}
+
+% example environment
+\setbeamercolor*{example title}{fg=white,bg=headBackg}
+%\setbeamerfont{example title}{size=\large,series=\bf,bg=headBackg,fg=white}
+%\setbeamercolor*{example body}{fg=white,bg=blockBackg}
+%\setbeamercolor*{example title}{fg=white,bg=headBackg}
+%  \setbeamercolor{framesubtitle}{fg=ta3orange, bg=ta2gray}
+%  \setbeamercolor{author in head/foot}{fg=tabutter, bg=black}
+%  \setbeamercolor{title in head/foot}{bg=tabutter, fg=black}
+
+\setbeamercolor{alerted text}{fg=alertColor}
+
+%\setbeamercolor{example text}{fg=taorange}
+%\setbeamercolor{structure}{fg=ta3skyblue}
+
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{navigation symbols}{}  % no navigation on a poster
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% BLOCK
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{block begin}{
+  \vskip.75ex
+  \begin{beamercolorbox}[ht=2.5ex,center,rounded=true,shadow=true,dp=1ex,colsep*=0ex]{block title}%
+%  \begin{beamercolorbox}[ht=2.5ex,center,dp=1ex,colsep*=0ex]{block title}%
+    \usebeamerfont*{block title}\insertblocktitle
+  \end{beamercolorbox}%
+  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
+  \usebeamerfont{block body}%
+  \begin{beamercolorbox}[center,sep=0ex,colsep=.8ex,vmode]{block body}
+    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+  }
+ \setbeamertemplate{block end}{
+  \end{beamercolorbox}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% HEADLINE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{headline}{  
+  \leavevmode
+
+%%%%%%%%%%%%
+  \begin{columns}[T]
+  \hskip1cm
+  \begin{column}[T]{.13\paperwidth}
+  \vskip2cm
+  \centering
+  \includegraphics[width=.13\paperwidth,keepaspectratio]{imgs/LogoDeiVector.pdf}
+  %\vskip0.5cm
+  %\includegraphics[width=.15\paperwidth,keepaspectratio]{imgs/LOGO_CISAS_OFFICIAL}
+  \end{column}
+
+  \begin{column}[T]{.6\paperwidth}
+  \centering
+          \vskip1.5cm
+   \setbeamercolor{headline}{fg=UniPDred, bg=white}
+   \begin{beamercolorbox}[wd=.71\paperwidth,center,vmode]{headline}
+        \usebeamercolor{title in headline}{\vskip1cm\color{fg}\textbf{\noindent\hskip1cm\huge {\inserttitle}}\vskip2ex}
+                  \vskip0.5cm
+        \usebeamercolor{author in headline}{\color{fg}\hskip1cm\large{\insertauthor}\vskip1ex}
+                          %\vskip0.05cm
+        \usebeamercolor{institute in headline}{\color{fg}\hskip1cm{\insertinstitute}\vskip1ex}
+  \end{beamercolorbox}
+  \end{column}
+  
+    \begin{column}[T]{.22\paperwidth}
+        \vskip2cm
+       \centering
+       \hskip 5cm
+       \includegraphics[width=.11\paperwidth,keepaspectratio]{imgs/LogoUnipdVector.pdf} 
+       %\vskip0cm
+       %\includegraphics[width=.12\paperwidth,keepaspectratio]{imgs/Logo_ASI}
+
+  \end{column}
+
+\end{columns}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%FOOTLINE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{footline}{
+   \begin{beamercolorbox}[wd=\paperwidth]{author in head/foot}%
+   %\includegraphics[width=\paperwidth]{imgs/foto_telescope_tagliata}
+   \includegraphics[height=11cm, width=\paperwidth]{imgs/lab.jpg}
+%  \QFlogoEight[30cm]{\paperwidth}{!}
+%%    \vskip1ex
+  \end{beamercolorbox}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<all>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-PDF-mode: t
+%%% TeX-master: "poster"
+%%% End: 
